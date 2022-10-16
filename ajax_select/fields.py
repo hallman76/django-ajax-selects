@@ -297,7 +297,9 @@ class AutoCompleteSelectMultipleField(forms.fields.CharField):
             'plugin_options': kwargs.pop('plugin_options', {})
         }
         widget_kwargs.update(kwargs.pop('widget_options', {}))
-        kwargs['widget'] = AutoCompleteSelectMultipleWidget(**widget_kwargs)
+        if not 'widget' in kwargs:
+            kwargs['widget'] = AutoCompleteSelectMultipleWidget(**widget_kwargs)
+
         kwargs['help_text'] = help_text
 
         super().__init__(*args, **kwargs)
