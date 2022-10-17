@@ -17,7 +17,7 @@ Extend the template, implement the extra_script block and bind functions that wi
 AutoCompleteSelectMultipleField::
 
     // yourapp/templates/ajax_select/autocompleteselectmultiple_{channel}.html
-
+    {% extends "ajax_select/autocompleteselectmultiple.html" %}
     {% block extra_script %}
     <script type="text/javascript">
         $("#{{html_id}}_on_deck").bind('added', function() {
@@ -34,7 +34,7 @@ AutoCompleteSelectMultipleField::
 AutoCompleteSelectField::
 
     // yourapp/templates/ajax_select/autocompleteselect_{channel}.html
-
+    {% extends "ajax_select/autocompleteselect.html" %}
     {% block extra_script %}
     <script type="text/javascript">
       $("#{{html_id}}_on_deck").bind('added', function() {
@@ -50,7 +50,7 @@ AutoCompleteSelectField::
 AutoCompleteField (simple text field)::
 
     // yourapp/templates/ajax_select/autocomplete_{channel}.html
-
+    {% extends "ajax_select/autocomplete.html" %}
     {% block extra_script %}
     <script type="text/javascript">
       $('#{{ html_id }}').bind('added', function() {
